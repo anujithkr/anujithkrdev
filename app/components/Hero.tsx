@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight, Terminal } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -16,14 +17,6 @@ export default function Hero() {
         transition={{ duration: 0.6 }}
         className="flex flex-col items-center text-center max-w-4xl px-6"
       >
-        {/* Greeting */}
-        <motion.p 
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-xl md:text-2xl font-semibold mb-4 tracking-tight text-muted"
-        >
-          Hi Devs, I am <span className="text-foreground">Anujith</span>
-        </motion.p>
 
         {/* Main Heading */}
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
@@ -38,10 +31,10 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 items-center">
-          <button className="button-gradient flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold group">
+          <Link href="/contact" className="button-gradient flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold group">
             Get in touch
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </button>
+          </Link>
   
           <button className="flex items-center gap-2 px-8 py-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all font-semibold">
             About me

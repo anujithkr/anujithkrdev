@@ -27,7 +27,7 @@ export default function Navbar() {
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full"></span>
           </Link>
           <Link href="#skills" className="hover:text-foreground transition-colors">Skills</Link>
-          <Link href="#contact" className="hover:text-foreground transition-colors">Contact</Link>
+          <Link href="/contact" className="hover:text-foreground transition-colors">Contact</Link>
         </div>
         
         <div className="flex items-center gap-4">
