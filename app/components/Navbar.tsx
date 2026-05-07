@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useTheme } from 'next-themes';
+import { useTheme } from './ThemeProvider';
 import { Moon, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
