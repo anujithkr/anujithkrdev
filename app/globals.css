@@ -2,25 +2,93 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #09090b;
+  --accent: #7c3aed;
+  --accent-foreground: #ffffff;
+  --secondary: #f4f4f5;
+  --muted: #71717a;
+}
+
+.dark {
+  --background: #05050a;
+  --foreground: #ffffff;
+  --accent: #8b5cf6;
+  --accent-foreground: #ffffff;
+  --secondary: #1e1b4b;
+  --muted: #a1a1aa;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Custom Gradients */
+.bg-hero-gradient {
+  background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.05) 0%, var(--background) 70%);
+}
+
+.dark .bg-hero-gradient {
+  background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.15) 0%, var(--background) 70%);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--foreground), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button-gradient {
+  background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%);
+  color: white;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.button-gradient::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.button-gradient:hover::after {
+  opacity: 1;
+}
+
+.button-gradient:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.5);
+}
+
+.glass-card {
+  background: rgba(var(--foreground-rgb, 0, 0, 0), 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--foreground-rgb, 0, 0, 0), 0.1);
+}
+
+.dark .glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
