@@ -19,24 +19,24 @@ export default function Hero() {
       >
 
         {/* Main Heading */}
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">
+        <h1 className="text-4xl md:text-7xl font-bold tracking-tight mb-6 md:mb-8 leading-[1.1]">
           Building <span className="text-accent italic font-medium">Premium</span> <br />
           Web Experiences With React & Next.js
         </h1>
 
         {/* Subheading */}
-        <p className="text-lg md:text-xl text-muted max-w-2xl mb-12 leading-relaxed">
+        <p className="text-base md:text-xl text-muted max-w-2xl mb-10 md:mb-12 leading-relaxed">
           I create fast, scalable, and visually polished web applications focused on performance, user experience, and modern design.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 items-center">
-          <Link href="#contact" className="button-gradient flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold group">
+        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-center">
+          <Link href="#contact" className="button-gradient flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-lg md:rounded-xl text-sm md:text-base font-semibold group">
             Get in touch
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
   
-          <Link href="#about" className="flex items-center gap-2 px-8 py-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all font-semibold group">
+          <Link href="#about" className="flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-lg md:rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-sm md:text-base font-semibold group">
             About me
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
