@@ -10,18 +10,26 @@ import {
   Database, 
   Globe,
   Smartphone,
-  Cpu
+  Cpu,
+  Server,
+  Layout,
+  FileCode,
+  Code
 } from 'lucide-react';
 
 const skills = [
+  { name: 'HTML5', icon: <Layout className="w-6 h-6" />, color: 'text-orange-500' },
+  { name: 'CSS3', icon: <FileCode className="w-6 h-6" />, color: 'text-blue-500' },
+  { name: 'JavaScript', icon: <Code className="w-6 h-6" />, color: 'text-yellow-400' },
   { name: 'React', icon: <Code2 className="w-6 h-6" />, color: 'text-blue-400' },
   { name: 'Next.js', icon: <Layers className="w-6 h-6" />, color: 'text-white' },
+  { name: 'Node.js', icon: <Cpu className="w-6 h-6" />, color: 'text-green-500' },
+  { name: 'Express.js', icon: <Server className="w-6 h-6" />, color: 'text-gray-400' },
+  { name: 'MongoDB', icon: <Database className="w-6 h-6" />, color: 'text-emerald-500' },
+  { name: 'Firebase', icon: <Database className="w-6 h-6" />, color: 'text-orange-400' },
   { name: 'TypeScript', icon: <Terminal className="w-6 h-6" />, color: 'text-blue-500' },
   { name: 'Tailwind', icon: <Palette className="w-6 h-6" />, color: 'text-cyan-400' },
-  { name: 'Firebase', icon: <Database className="w-6 h-6" />, color: 'text-orange-400' },
-  { name: 'Node.js', icon: <Cpu className="w-6 h-6" />, color: 'text-green-500' },
   { name: 'Bootstrap', icon: <Zap className="w-6 h-6" />, color: 'text-purple-500' },
-  { name: 'MongoDB', icon: <Database className="w-6 h-6" />, color: 'text-emerald-500' },
 ];
 
 export default function Skills() {

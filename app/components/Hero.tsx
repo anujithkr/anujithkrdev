@@ -31,15 +31,15 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 items-center">
-          <Link href="/contact" className="button-gradient flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold group">
+          <Link href="#contact" className="button-gradient flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold group">
             Get in touch
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
   
-          <button className="flex items-center gap-2 px-8 py-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all font-semibold">
+          <Link href="#about" className="flex items-center gap-2 px-8 py-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all font-semibold group">
             About me
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </button>
+          </Link>
         </div>
       </motion.div>
     </section>

@@ -90,9 +90,10 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row items-center justify-between pt-10 border-t border-white/5 gap-8">
           <div className="flex gap-8 text-[11px] font-medium text-muted uppercase tracking-widest order-2 md:order-1">
-            <Link href="#projects" className="hover:text-foreground transition-colors">Projects</Link>
-            <Link href="#skills" className="hover:text-foreground transition-colors">Skills</Link>
-            <Link href="/contact" className="hover:text-foreground transition-colors">Contact</Link>
+            <Link href="/#about" className="hover:text-foreground transition-colors">About</Link>
+            <Link href="/#projects" className="hover:text-foreground transition-colors">Projects</Link>
+            <Link href="/#skills" className="hover:text-foreground transition-colors">Skills</Link>
+            <Link href="/#contact" className="hover:text-foreground transition-colors">Contact</Link>
           </div>
 
           <div className="flex gap-6 order-1 md:order-2">

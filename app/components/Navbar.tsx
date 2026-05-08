@@ -16,18 +16,22 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto backdrop-blur-sm">
-      <div className="text-2xl font-bold tracking-tight">
-      Anujith KR
-      </div>
+      <Link href="/" className="text-2xl font-bold tracking-tight group hover:opacity-80 transition-all">
+        Anujith <span className="text-accent group-hover:text-accent/80 transition-colors">KR</span>
+      </Link>
       
       <div className="flex items-center gap-8">
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
-          <Link href="#projects" className="hover:text-foreground transition-colors relative group">
+          <Link href="/#about" className="hover:text-foreground transition-colors relative group">
+            About
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full"></span>
+          </Link>
+          <Link href="/#projects" className="hover:text-foreground transition-colors relative group">
             Projects
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full"></span>
           </Link>
-          <Link href="#skills" className="hover:text-foreground transition-colors">Skills</Link>
-          <Link href="/contact" className="hover:text-foreground transition-colors">Contact</Link>
+          <Link href="/#skills" className="hover:text-foreground transition-colors">Skills</Link>
+          <Link href="/#contact" className="hover:text-foreground transition-colors">Contact</Link>
         </div>
         
         <div className="flex items-center gap-4">
