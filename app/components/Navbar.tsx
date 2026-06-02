@@ -43,9 +43,14 @@ export default function Navbar() {
             {mounted && (theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />)}
           </button>
           
-          <button className="button-gradient px-6 py-2 rounded-full text-sm font-semibold">
+          <a 
+            href="/resume.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="button-gradient px-6 py-2 rounded-full text-sm font-semibold"
+          >
             Resume
-          </button>
+          </a>
         </div>
       </div>
     </nav>
