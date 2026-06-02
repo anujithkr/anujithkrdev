@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Code, ShoppingCart, GraduationCap, Briefcase, Layout } from 'lucide-react';
 import Link from 'next/link';
+import Tilt3D from './Tilt3D';
 
 const projects = [
   {
@@ -61,37 +62,41 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="group relative glass-card rounded-2xl md:rounded-[2rem] overflow-hidden flex flex-col h-full hover:border-accent/30 transition-all duration-500"
+            className="h-full"
           >
-            {/* Project Header */}
-            <div className="p-6 md:p-8 pb-0 flex justify-between items-start">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
-                {project.icon}
-              </div>
-            </div>
+            <Tilt3D className="h-full">
+              <div className="group relative glass-card rounded-2xl md:rounded-[2rem] overflow-hidden flex flex-col h-full hover:border-accent/30 transition-all duration-500 bg-background/50">
+                {/* Project Header */}
+                <div className="p-6 md:p-8 pb-0 flex justify-between items-start">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                    {project.icon}
+                  </div>
+                </div>
 
-            {/* Project Info */}
-            <div className="p-6 md:p-8 flex-grow flex flex-col justify-between">
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-accent/60 mb-2 block">
-                  {project.category}
-                </span>
-                <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 group-hover:text-accent transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted text-xs md:text-sm leading-relaxed mb-6 md:mb-8">
-                  {project.description}
-                </p>
-              </div>
+                {/* Project Info */}
+                <div className="p-6 md:p-8 flex-grow flex flex-col justify-between">
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-accent/60 mb-2 block">
+                      {project.category}
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 group-hover:text-accent transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted text-xs md:text-sm leading-relaxed mb-6 md:mb-8">
+                      {project.description}
+                    </p>
+                  </div>
 
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map(t => (
-                  <span key={t} className="text-[10px] font-mono py-1 px-3 rounded-lg bg-white/5 border border-white/10 text-muted uppercase tracking-wider">
-                    {t}
-                  </span>
-                ))}
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map(t => (
+                      <span key={t} className="text-[10px] font-mono py-1 px-3 rounded-lg bg-white/5 border border-white/10 text-muted uppercase tracking-wider">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
+            </Tilt3D>
           </motion.div>
         ))}
       </div>

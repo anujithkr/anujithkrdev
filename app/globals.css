@@ -37,13 +37,28 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom Gradients */
+/* Custom Gradients & Mesh Color Shadows */
 .bg-hero-gradient {
-  background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.05) 0%, var(--background) 70%);
+  background: 
+    radial-gradient(circle at 15% 25%, rgba(124, 58, 237, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(6, 182, 212, 0.05) 0%, transparent 45%),
+    var(--background);
 }
 
 .dark .bg-hero-gradient {
-  background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.15) 0%, var(--background) 70%);
+  background: 
+    radial-gradient(circle at 15% 25%, rgba(139, 92, 246, 0.15) 0%, transparent 55%),
+    radial-gradient(circle at 85% 75%, rgba(6, 182, 212, 0.08) 0%, transparent 55%),
+    var(--background);
+}
+
+/* GSAP Follower Spotlight custom color shadow */
+.cursor-follower-bg {
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, rgba(6, 182, 212, 0.06) 45%, transparent 70%) !important;
+}
+
+.dark .cursor-follower-bg {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, rgba(6, 182, 212, 0.08) 45%, transparent 70%) !important;
 }
 
 .text-gradient {
@@ -83,12 +98,43 @@ body {
 }
 
 .glass-card {
-  background: rgba(var(--foreground-rgb, 0, 0, 0), 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(var(--foreground-rgb, 0, 0, 0), 0.1);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(124, 58, 237, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(124, 58, 237, 0.2);
+  box-shadow: 
+    0 20px 40px -15px rgba(124, 58, 237, 0.12), 
+    0 0 15px rgba(6, 182, 212, 0.05);
 }
 
 .dark .glass-card {
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
 }
+
+.dark .glass-card:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 
+    0 20px 40px -15px rgba(139, 92, 246, 0.15), 
+    0 0 20px rgba(139, 92, 246, 0.05);
+}
+
+/* Premium GSAP Custom Cursor Replacement (Desktop Only) */
+@media (min-width: 768px) {
+  body, 
+  a, 
+  button, 
+  canvas, 
+  .glass-card, 
+  .button-gradient,
+  [role="button"] {
+    cursor: none !important;
+  }
+}
+

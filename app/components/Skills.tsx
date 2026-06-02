@@ -16,6 +16,7 @@ import {
   FileCode,
   Code
 } from 'lucide-react';
+import Tilt3D from './Tilt3D';
 
 const skills = [
   { name: 'HTML5', icon: <Layout className="w-6 h-6" />, color: 'text-orange-500', glow: 'bg-orange-500/20' },
@@ -58,28 +59,27 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.05 }}
             viewport={{ once: true }}
-            whileHover={{ 
-              y: -8, 
-              scale: 1.02,
-              transition: { duration: 0.3, ease: "easeOut" } 
-            }}
-            className="glass-card p-6 md:p-8 rounded-2xl md:rounded-3xl flex flex-col items-center justify-center text-center group relative overflow-hidden transition-colors hover:border-accent/30"
+            className="h-full"
           >
-            {/* Dynamic Glow Effect */}
-            <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl -z-10 ${skill.glow}`} />
-            
-            <div className={`${skill.color} mb-3 md:mb-4 transform transition-all duration-500 group-hover:scale-125 group-hover:rotate-[10deg]`}>
-              <div className="scale-90 md:scale-100 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">
-                {skill.icon}
+            <Tilt3D className="h-full">
+              <div className="glass-card p-6 md:p-8 rounded-2xl md:rounded-3xl flex flex-col items-center justify-center text-center group relative overflow-hidden transition-colors hover:border-accent/30 h-full">
+                {/* Dynamic Glow Effect */}
+                <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl -z-10 ${skill.glow}`} />
+                
+                <div className={`${skill.color} mb-3 md:mb-4 transform transition-all duration-500 group-hover:scale-125 group-hover:rotate-[10deg]`}>
+                  <div className="scale-90 md:scale-100 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+                    {skill.icon}
+                  </div>
+                </div>
+                
+                <span className="text-sm md:text-base font-semibold text-foreground/90 tracking-tight group-hover:text-foreground transition-colors group-hover:tracking-widest duration-500">
+                  {skill.name}
+                </span>
+                
+                {/* Corner Accent */}
+                <div className={`absolute top-0 right-0 w-12 h-12 ${skill.glow} opacity-0 group-hover:opacity-40 blur-xl transition-opacity`} />
               </div>
-            </div>
-            
-            <span className="text-sm md:text-base font-semibold text-foreground/90 tracking-tight group-hover:text-foreground transition-colors group-hover:tracking-widest duration-500">
-              {skill.name}
-            </span>
-            
-            {/* Corner Accent */}
-            <div className={`absolute top-0 right-0 w-12 h-12 ${skill.glow} opacity-0 group-hover:opacity-40 blur-xl transition-opacity`} />
+            </Tilt3D>
           </motion.div>
         ))}
       </div>
